@@ -18,6 +18,8 @@ async function init() {
     mapId: "8e0a97af9386fef",
   });
 
+
+  
   addMarkers();
 }
 
