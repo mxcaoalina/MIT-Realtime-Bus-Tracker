@@ -6,10 +6,8 @@ var markers = [];
 async function init() {
   // The location of boston
   const position = { lat: 42.353350,lng:-71.091525 };
-  // Request needed libraries.
-  //@ts-ignore
+  // Request needed libraries
    const { Map } = await google.maps.importLibrary("maps");
- //  const { addMarker } = await google.maps.importLibrary("marker");
 
   // The map, centered at boston
   map = new Map(document.getElementById("map"), {
@@ -17,12 +15,9 @@ async function init() {
     center: position,
     mapId: "8e0a97af9386fef",
   });
-
-
   
   addMarkers();
 }
-
 
 
 
