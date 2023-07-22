@@ -51,8 +51,14 @@ async function getBusLocations(){
 	return json.data;
 }
 
+
+//customize the icon of bus marker
 function addMarker(bus){
-    var icon = google.maps.importLibrary("marker");
+	var icon = {
+		url: "http://maps.google.com/mapfiles/kml/shapes/bus.png",
+		scaledSize: new google.maps.Size(30, 30) //rescale the size of icon
+	};
+    
 	var marker = new google.maps.Marker({
 	    position: {
 	    	lat: bus.attributes.latitude, 
@@ -67,9 +73,6 @@ function addMarker(bus){
 
 
 function moveMarker(marker,bus) {
-	// change icon if bus has changed direction
-	var icon = google.maps.importLibrary("marker");
-
 	// move icon to new lat/lon
     marker.setPosition( {
     	lat: bus.attributes.latitude, 
